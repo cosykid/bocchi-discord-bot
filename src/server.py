@@ -12,7 +12,6 @@ from duel import register_duel_command
 # IGNORE ALL FLASK CODE IT'S JUST THERE FOR DEPLOYMENT
 
 from flask import Flask
-import threading
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,10 +22,6 @@ def run_flask():
     # Get the PORT environment variable set by Render
     port = os.getenv('PORT', 5000)  # Default to 5000 if not set
     app.run(host='0.0.0.0', port=port)
-
-# Run Flask in a separate thread to avoid blocking the bot
-flask_thread = threading.Thread(target=run_flask)
-flask_thread.start()
 
 #######################################################
 
