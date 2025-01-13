@@ -17,6 +17,9 @@ services:
       - ./src/duel.py:/app/src/duel.py
     ports:
       - 8000:8000
+    dns:
+      - 8.8.8.8  # Google's DNS server (you can use other DNS servers too)
+      - 8.8.4.4
     env_file:
       - .env
 
