@@ -8,10 +8,12 @@ from discord import app_commands
 from gpt import send_request
 from duel import register_duel_command
 
-
 # IGNORE ALL FLASK CODE IT'S JUST THERE FOR DEPLOYMENT
 
 from flask import Flask
+import asyncio
+from threading import Thread
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -69,4 +71,10 @@ async def on_message_change(message):
     else:
         await message.channel.send(DELETED_GIF)
 
-client.run(TOKEN)
+if __name__ == "__main__":
+    # Start the Flask server in a separate thread
+    flask_thread = Thread(target=run_flask)
+    flask_thread.start()
+
+    # Start the Discord bot (async)
+    asyncio.run(client.run(TOKEN))
