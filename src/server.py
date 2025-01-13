@@ -2,10 +2,7 @@ import discord
 import os
 import random
 from dotenv import load_dotenv
-from discord import app_commands, Member
-from http.server import HTTPServer, SimpleHTTPRequestHandler
-
-HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler).serve_forever() # to keep render.com happy
+from discord import app_commands
 
 # Other files
 from gpt import send_request
