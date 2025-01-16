@@ -47,7 +47,7 @@ def register_duel_command(tree, client):
 
         if (random.choice([interaction.user, member]) == member):
             winner = member
-            loser = await interaction.guild.fetch_member(interaction.user.id)
+            loser = interaction.guild.get_member(interaction.user.id)
         else:
             winner = interaction.user
             loser = member
