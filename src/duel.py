@@ -13,7 +13,7 @@ GUN_GIFS = [
 
 DUEL_MESSAGES = [
     '{winner.mention} hit {loser.mention} with a a 6-string bass',
-    '{loser.mention} was sent the squid games by {winner.mention}',
+    '{loser.mention} was sent to the squid games by {winner.mention}',
     '{loser.mention} was sent to the summoner\'s rift by {winner.mention}',
     '{winner.mention} threw {loser.mention} into orbit',
     '{loser.mention} was suplexed by {winner.mention}',

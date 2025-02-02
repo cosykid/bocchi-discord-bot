@@ -47,9 +47,12 @@ async def on_message_change(message):
     if message.author == client.user:
         return
     
+    num = random.randint(1, 6)
     # Catches the deleted/edited message in a 1 in 6 chance, otherwise send bocchi gif
-    if random.randint(1, 6) == 3:
+    if num > 4:
         await message.channel.send(f'{message.author.mention}\n> {message.content}')
+    elif num < 3:
+        await message.channel.send(':frogepolice:')
     else:
         await message.channel.send(DELETED_GIF)
 
